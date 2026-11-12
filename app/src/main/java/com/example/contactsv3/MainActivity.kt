@@ -6,6 +6,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.commit
 import com.google.android.material.appbar.MaterialToolbar
 
@@ -32,6 +34,11 @@ class MainActivity : AppCompatActivity() {
 
         // Flèche de retour visible dès qu'un fragment est empilé
         supportFragmentManager.addOnBackStackChangedListener { actualiserFlecheRetour() }
+        // Le retour système (geste prédictif) peut mettre à jour la pile après le listener :
+        // on actualise aussi la flèche à chaque fois qu'un fragment devient actif.
+        supportFragmentManager.registerFragmentLifecycleCallbacks(object : FragmentManager.FragmentLifecycleCallbacks() {
+            override fun onFragmentResumed(fm: FragmentManager, f: Fragment) = actualiserFlecheRetour()
+        }, false)
         actualiserFlecheRetour()
 
         // Le fragment initial n'est ajouté qu'au premier lancement : après une rotation,
@@ -45,7 +52,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun actualiserFlecheRetour() {
-        supportActionBar?.setDisplayHomeAsUpEnabled(supportFragmentManager.backStackEntryCount > 0)
+        // post : la pile est lue une fois la transaction (y compris un retour prédictif) terminée
+        window.decorView.post {
+            supportActionBar?.setDisplayHomeAsUpEnabled(supportFragmentManager.backStackEntryCount > 0)
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
