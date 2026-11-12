@@ -21,6 +21,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- Clé Google Maps injectée depuis local.properties (MAPS_API_KEY), jamais publiée sur GitHub -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${MAPS_API_KEY}" />
+
+        <!-- Partage d'un fichier interne avec l'application Caméra -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
+
+    <!-- La caméra est utilisée si elle existe, mais n'est pas obligatoire -->
+    <uses-feature
+        android:name="android.hardware.camera.any"
+        android:required="false" />
 
 </manifest>

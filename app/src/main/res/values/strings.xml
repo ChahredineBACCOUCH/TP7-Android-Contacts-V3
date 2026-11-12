@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Contacts V3</string>
+    <string name="titre_liste">Mes contacts</string>
+    <string name="titre_detail">Fiche du contact</string>
+    <string name="titre_carte">Position du contact</string>
+    <string name="nom_complet">%1$s %2$s</string>
+    <string name="desc_photo">Photo du contact</string>
+
+    <string name="hint_recherche">Rechercher (nom, prénom, téléphone)</string>
+    <string name="msg_aucun_resultat">Aucun contact ne correspond à la recherche</string>
+
+    <string name="hint_nom">Nom</string>
+    <string name="hint_prenom">Prénom</string>
+    <string name="hint_telephone">Téléphone</string>
+    <string name="hint_email">Adresse e-mail</string>
+    <string name="titre_position">Position GPS</string>
+    <string name="hint_latitude">Latitude (−90 à 90)</string>
+    <string name="hint_longitude">Longitude (−180 à 180)</string>
+
+    <string name="btn_galerie">Galerie</string>
+    <string name="btn_camera">Caméra</string>
+    <string name="btn_appeler">Appeler</string>
+    <string name="btn_email">Envoyer un e-mail</string>
+    <string name="btn_carte">Voir sur la carte</string>
+    <string name="btn_enregistrer">Enregistrer</string>
+    <string name="btn_annuler">Annuler</string>
+
+    <string name="erreur_obligatoire">Champ obligatoire</string>
+    <string name="erreur_email">Adresse e-mail invalide</string>
+    <string name="erreur_non_numerique">Valeur non numérique</string>
+    <string name="erreur_latitude">La latitude doit être comprise entre −90 et 90</string>
+    <string name="erreur_longitude">La longitude doit être comprise entre −180 et 180</string>
+    <string name="erreur_coordonnee_manquante">Renseignez la latitude et la longitude, ou aucune des deux</string>
+    <string name="msg_coordonnees_invalides">Coordonnées GPS invalides</string>
+    <string name="msg_champs_invalides">Veuillez corriger les champs signalés</string>
+    <string name="msg_enregistre">Contact enregistré</string>
+    <string name="msg_contact_introuvable">Contact introuvable</string>
+    <string name="msg_selection_annulee">Sélection de photo annulée</string>
+    <string name="msg_photo_illisible">Impossible de lire l\'image choisie</string>
+    <string name="msg_photo_annulee">Prise de photo annulée</string>
+    <string name="msg_aucune_galerie">Aucune application de galerie disponible</string>
+    <string name="msg_camera_indisponible">Aucune caméra disponible sur cet appareil</string>
+    <string name="msg_camera_refusee">L\'accès à la caméra a été refusé</string>
+    <string name="msg_aucune_app_telephone">Aucune application téléphone disponible</string>
+    <string name="msg_aucune_app_email">Aucune application de messagerie disponible</string>
+
+    <string name="coordonnees">%1$s — latitude %2$.4f, longitude %3$.4f</string>
+    <string name="msg_aucune_position">Aucune position GPS n\'est définie pour %1$s.\nRenseignez une latitude et une longitude dans la fiche du contact.</string>
+    <string name="msg_cle_api_manquante">Clé Google Maps absente.\nAjoutez MAPS_API_KEY=votre_cle dans le fichier local.properties du projet puis recompilez.</string>
+</resources>

@@ -1,0 +1,3 @@
+# Copiez ce fichier en local.properties (non versionné) et renseignez votre clé Google Maps.
+sdk.dir=CHEMIN_VERS_LE_SDK_ANDROID
+MAPS_API_KEY=VOTRE_CLE_API_GOOGLE_MAPS
